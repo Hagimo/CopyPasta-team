@@ -1,3 +1,5 @@
 # CopyPasta-team
 
-Team members: Jan Mrázek (PepeDuke)
+Team members: Radim Mužíček (Hagimo)
+              Jan Mrázek (PepeDuke)
+              Hana Abrahámová ()
