@@ -16,5 +16,15 @@
 		<li style="float:right" ><a href="about.php" class="hav">Napište nám</a></li>
 		<li style="float:right" ><a href="revize.php" class="hav">Revize <u class="NotifNum">0</u></a></li>
 	</ul>
+     <div class="login-card">
+     <form>
+   	    <input type="text" name="user" placeholder="Username">
+    	<input type="password" name="pass" placeholder="Password">
+    	<input type="submit" name="login" class="login login-submit" value="login">
+ 	 </form>
+     <div class="login-help">
+    	<a href="register.php">Register</a> • <a href="#">Forgot Password</a>
+ 	 </div>
+     </div>
 	</body>
 </html>
