@@ -1,47 +1,20 @@
-<!DOCTYPE HTML>
-<html>
+﻿<!DOCTYPE HTML>
+<html lang="cs">
 	<head>
-	<style>
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #d9d9d9;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.active {
-    background-color: #4CAF50;
-}
-</style>
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
 	</head>
 	<body>
-	<ul>
-		<li style="float:right" ><a href="login.php">login</a></li>
-		<li style="float:right"><a href="register.php">register</a></li>
+	<ul class="topul">
+    	<li><a href="Index.php" class="Title1">LOGOS</a></li>
+        <li><a href="Index.php" class="Title2">POLYTECHNIKOS</a></li>
+		<li style="float:right" ><a href="login.php" class="btn">login</a></li>
+		<li style="float:right"><a href="register.php" class="btn">register</a></li>
 	</ul>
-	
 	<ul>
-		<li><a href="Index.php">Home</a></li>
-		<li><a href="casopisy.php">casopisy</a></li>
-		<li style="float:right" ><a href="about.php">about</a></li>
-		<li style="float:right" ><a href="revize.php">revize</a></li>
+	  <li><a href="Index.php" class="active hav pic"><img border="0" alt="Home" src="images/home-red.png" width="30" height="30"></a></li>
+		<li><a href="casopisy.php" class="hav">Čísla časopisu</a></li>
+		<li style="float:right" ><a href="about.php" class="hav">Napište nám</a></li>
+		<li style="float:right" ><a href="revize.php" class="hav">Revize <u class="NotifNum">0</u></a></li>
 	</ul>
 	</body>
 </html>
