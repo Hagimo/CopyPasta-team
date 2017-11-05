@@ -1,0 +1,215 @@
+﻿ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #EAEAEA;
+}
+.topul {
+	padding-top: 0;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 1%;
+	list-style-type: none;
+	overflow: hidden;
+	background-color: #FFFFFF;
+}
+
+li {
+    float: left;
+}
+
+li a {
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: Calibri;
+}
+
+.hav:hover {
+	border-bottom: 3px solid #95D2F9;
+}
+
+.active {
+	border-bottom: 3px solid #0072BC;
+	color: #ED1B2F;
+	text-align: center;
+	text-decoration: none;
+}
+.active_b{
+	color: #ED1B2F;
+	text-align: center;
+	text-decoration: none;
+}
+.btn {
+	-webkit-border-radius: 8;
+	-moz-border-radius: 8;
+	border-radius: 8px;
+	font-family: Arial;
+	font-size: 18px;
+	background: #EAEAEA;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	text-decoration: none;
+}
+
+.btn:hover {
+  background: #0593eb;
+  background-image: -webkit-linear-gradient(top, #0593eb, #0072BC);
+  background-image: -moz-linear-gradient(top, #0593eb, #0072BC);
+  background-image: -ms-linear-gradient(top, #0593eb, #0072BC);
+  background-image: -o-linear-gradient(top, #0593eb, #0072BC);
+  background-image: linear-gradient(to bottom, #0593eb, #0072BC);
+  text-decoration: none;
+}
+.Title1{
+	margin-right: 10px;
+	margin-left: 10px;
+	color: #EC1F31;
+	margin-top: 0px;
+	padding-top: 30px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	font-size: 24px;
+}
+.Title2{
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 0px;
+	color: #0A72BA;
+	padding-top: 30px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	font-size: 24px;
+}
+.pic{
+	padding-top: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	padding-bottom: 5px;
+}
+.NotifNum{
+	color: #0A72BA;
+	text-decoration: none;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	background-color: #C7C7C7;
+	border-radius: 8px;
+}
+  
+.login-card {
+	padding: 40px;
+	width: 274px;
+	background-color: #EAEAEA;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+	border-radius: 2px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+}
+
+.login-card h1 {
+  font-weight: 100;
+  text-align: center;
+  font-size: 2.3em;
+}
+
+.login-card input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.login-card input[type=text], input[type=password], input[type=email] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.login-card input[type=text]:hover, input[type=password]:hover, input[type=email]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.login {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.login-submit {
+	/* border: 1px solid #3079ed; */
+	border: 0px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0,0,0,0.1);
+	background-color: #0A72BA;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.login-submit:hover {
+	/* border: 1px solid #2f5bb7; */
+	border: 0px;
+	text-shadow: 0 1px rgba(0,0,0,0.3);
+	background-color: #138BDD;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.login-card a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-card a:hover {
+  opacity: 1;
+}
+
+.login-help {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+.error {
+	color: #FF0004;
+}
