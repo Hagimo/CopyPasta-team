@@ -13,7 +13,7 @@
 	$error = "";
 	
 	
-	$con=mysqli_connect("localhost","root","") or die(mysql_error());
+	$con=mysqli_connect('localhost','root','') or die(mysql_error());
 	mysqli_select_db($con,'polytech');
 	
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -80,7 +80,7 @@
 						mysqli_query($con,"INSERT INTO user VALUES('$name','$password','$email','user')");
 						session_start();
 						$_SESSION['user']= $name;
-						header('Location: index.php');
+						header('Location: Index.php');
 						
 					}
 					else
