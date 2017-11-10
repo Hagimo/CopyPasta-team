@@ -17,7 +17,7 @@
 		  }
 		  else
 		  {
-			  echo '<li style="float:right" ><a href="logout.php" class="btn">' .$_SESSION['user']. '</a></li>';
+			  echo '<li style="float:right" class="dropdown" ><button class="dropbtn">' .$_SESSION['user']. '</button><div class="dropdown-content"><a href="prispevky.php" class="dropmenu">Seznam píspěvků</a><a href="logout.php" class="dropmenu">Odhlasit</a></div></li>';
 		 	  echo '<li style="float:right"><a href="pridani.php" class="btn pic"><img border="0" alt="Home" src="images/article-black.png" width="20" height="20"></a></li>';
 		  }
        		 ?>
