@@ -324,3 +324,21 @@ table td, table th {
 	overflow: hidden;
 	text-align: center;
 }
+.btn-extra {
+	color:#FFFFFF;
+	-webkit-border-radius: 8;
+	-moz-border-radius: 8;
+	border-radius: 8px;
+	font-family: Arial;
+	font-size: 18px;
+	background: #138BDD;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	text-decoration: none;
+}
