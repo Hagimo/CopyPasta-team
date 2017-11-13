@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <?php
     session_start();
 ?>
@@ -28,5 +28,18 @@
 		<li style="float:right" ><a href="about.php" class="hav">Napište nám</a></li>
 		<li style="float:right" ><a href="revize.php" class="hav">Revize <u class="NotifNum">0</u></a></li>
 	</ul>
+	<?php
+	
+	$con=mysqli_connect('localhost','root','') or die(mysql_error());
+	mysqli_select_db($con,'polytech');
+	$sql="SELECT * FROM casopis";
+	$result=mysqli_query($con,$sql);
+		while ($row = mysqli_fetch_assoc($result)) {
+				echo  '<div class="Main-card">';
+				echo  '<h3>'.$row["rok"].'     Číslo '.$row["cislo"].'</h3>';                    
+				echo  '<ul><a style="float:right" class="btn-extra" href="'.$row["path"].'" download>stahnout</a><a style="float:right" class="btn-extra" href="'.$row["path"].'">Zobrazit</a></ul>';
+				echo  '</div>';
+		}
+	?>  
 	</body>
 </html>
