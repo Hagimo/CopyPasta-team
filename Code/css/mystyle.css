@@ -18,10 +18,12 @@
 h2{
 	font-weight: bold;
 	font-family: Calibri;
+	color: #EC1F31;
 }
 h3{
 	font-weight: bold;
 	font-family: Calibri;
+	color: #EC1F31;
 }
 
 li {
@@ -255,6 +257,9 @@ li a {
 .error {
 	color: #FF0004;
 }
+.secces {
+	color: #00B909;
+}
 .filestyle {
 	padding-right: 8px;
 	margin-top: 0px;
@@ -324,6 +329,31 @@ table td, table th {
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 	overflow: hidden;
 	text-align: center;
+}
+.Main-card-large {
+	padding: 40px;
+	width: 800px;
+	background-color: #EAEAEA;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	text-align: left;
+}
+.Main-card-large a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.Main-card-large a:hover {
+  opacity: 1;
 }
 .btn-extra {
 	color:#FFFFFF;

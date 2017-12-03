@@ -29,6 +29,7 @@
 	$title = "";
 	$comment = "";
 	$error = "";
+	$secces = "";
 	
 	$con=mysqli_connect('localhost','root','') or die(mysql_error());
 	mysqli_select_db($con,'polytech');
@@ -75,7 +76,7 @@
 				
 				if (!file_exists($target_file)) {
 				 	if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-       					$error .= '* soubor se podařilo nahrát ' .$rename .'<br>';
+       					$secces .= '* soubor se podařilo nahrát ' .$rename .'<br>';
     				} else {
         				$error .= '* neznamý error <br>';
    				 	}
@@ -131,14 +132,20 @@
 	<ul>
 	  <li><a href="Index.php" class="hav pic"><img border="0" alt="Home" src="images/home-blue.png" width="30" height="30"></a></li>
 		<li><a href="casopisy.php" class="hav">Čísla časopisu</a></li>
-		<li style="float:right" ><a href="about.php" class="hav">Napište nám</a></li>
-		<li style="float:right" ><a href="revize.php" class="hav">Revize <u class="NotifNum">0</u></a></li>
+		<li style="float:right" ><a href="about.php" class="hav">Informace</a></li>
+		<?php
+		   if (!isset($_SESSION['user'])) {
+			    if ($_SESSION['type'] == "redaktor") {
+			   echo '<li style="float:right" ><a href="revize.php" class="hav">Revize <u class="NotifNum">0</u></a></li>';
+			   }
+		   }
+		   ?>
 	</ul>
 </div>
     <div id="wrapper">
     <div class="login-card">
      <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-     	<span class="error"><?php echo $error;?></span>
+     	<span class="error"><?php echo $error;?></span><span class="secces"><?php echo $secces;?></span>
    	    <input type="text" name="title" placeholder="Titul" value="<?php echo $title;?>">
         <textarea name="comment" placeholder="Komentář" rows="5" cols="24" class="Commentstyle"><?php echo $comment;?></textarea>
         <input type="file" name="file" class="filestyle"  id="fileToUpload" >
