@@ -132,8 +132,14 @@
 	<ul>
 	  <li><a href="Index.php" class="hav pic"><img border="0" alt="Home" src="images/home-blue.png" width="30" height="30"></a></li>
 		<li><a href="casopisy.php" class="hav">Čísla časopisu</a></li>
-		<li style="float:right" ><a href="about.php" class="hav">Napište nám</a></li>
-		<li style="float:right" ><a href="revize.php" class="hav">Revize <u class="NotifNum">0</u></a></li>
+		<li style="float:right" ><a href="about.php" class="hav">Informace</a></li>
+		<?php
+		   if (!isset($_SESSION['user'])) {
+			    if ($_SESSION['type'] == "redaktor") {
+			   echo '<li style="float:right" ><a href="revize.php" class="hav">Revize <u class="NotifNum">0</u></a></li>';
+			   }
+		   }
+		   ?>
 	</ul>
 </div>
     <div id="wrapper">
