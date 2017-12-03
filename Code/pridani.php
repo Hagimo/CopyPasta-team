@@ -5,6 +5,24 @@
 <html lang="cs">
 	<head>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+ <script>
+		var pagetop, menu, yPos;
+		function yScroll(){
+			pagetop = document.getElementById('pagetop');
+			topul = document.getElementById('topul');
+			yPos = window.pageYOffset;
+			if(yPos > 150){
+				pagetop.style.height = "55px";
+				topul.style.height = "0px";
+				topul.style.paddingBottom = "0px";
+			} else {
+				pagetop.style.height = "120px";
+				topul.style.height = "50px";
+				topul.style.paddingBottom = "1%";
+			}
+		}
+		window.addEventListener("scroll", yScroll);
+	</script>
 	</head>
 	<body>
     <?php
@@ -94,7 +112,8 @@
 		}
 	
     ?>
-	<ul class="topul">
+	<div id="pagetop">
+	<ul class="topul" id="topul">
     	<li><a href="Index.php" class="Title1">LOGOS</a></li>
         <li><a href="Index.php" class="Title2">POLYTECHNIKOS</a></li>
 		<?php
@@ -115,6 +134,8 @@
 		<li style="float:right" ><a href="about.php" class="hav">Napište nám</a></li>
 		<li style="float:right" ><a href="revize.php" class="hav">Revize <u class="NotifNum">0</u></a></li>
 	</ul>
+</div>
+    <div id="wrapper">
     <div class="login-card">
      <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
      	<span class="error"><?php echo $error;?></span>
@@ -124,5 +145,6 @@
     	<input type="submit" name="login" class="login login-submit" value="poslat k revizi">
  	 </form>
      </div>
+ </div>
 	</body>
 </html>
