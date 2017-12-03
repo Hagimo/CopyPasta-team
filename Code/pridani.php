@@ -29,6 +29,7 @@
 	$title = "";
 	$comment = "";
 	$error = "";
+	$secces = "";
 	
 	$con=mysqli_connect('localhost','root','') or die(mysql_error());
 	mysqli_select_db($con,'polytech');
@@ -75,7 +76,7 @@
 				
 				if (!file_exists($target_file)) {
 				 	if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-       					$error .= '* soubor se podařilo nahrát ' .$rename .'<br>';
+       					$secces .= '* soubor se podařilo nahrát ' .$rename .'<br>';
     				} else {
         				$error .= '* neznamý error <br>';
    				 	}
@@ -138,7 +139,7 @@
     <div id="wrapper">
     <div class="login-card">
      <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-     	<span class="error"><?php echo $error;?></span>
+     	<span class="error"><?php echo $error;?></span><span class="secces"><?php echo $secces;?></span>
    	    <input type="text" name="title" placeholder="Titul" value="<?php echo $title;?>">
         <textarea name="comment" placeholder="Komentář" rows="5" cols="24" class="Commentstyle"><?php echo $comment;?></textarea>
         <input type="file" name="file" class="filestyle"  id="fileToUpload" >
