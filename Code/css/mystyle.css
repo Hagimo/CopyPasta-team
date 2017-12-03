@@ -13,6 +13,7 @@
 	list-style-type: none;
 	overflow: hidden;
 	background-color: #FFFFFF;
+	transition: height 0.3s linear 0s;
 }
 h2{
 	font-weight: bold;
@@ -342,3 +343,10 @@ table td, table th {
 	margin-bottom: 0px;
 	text-decoration: none;
 }
+#pagetop{
+	position: fixed;
+	top: 0px;
+	width:100%;
+	transition: height 0.3s linear 0s, padding 0.3s linear 0s;
+}
+#wrapper{ margin-top: 150px; }
