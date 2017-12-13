@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2017 at 07:30 PM
+-- Generation Time: Dec 13, 2017 at 01:34 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `article` (
   `Article_id` int(11) NOT NULL,
   `Titule` varchar(64) NOT NULL,
+  `Tema` varchar(64) NOT NULL,
   `Comment` varchar(500) NOT NULL,
   `Name` varchar(200) NOT NULL,
   `Nick` varchar(32) NOT NULL,
@@ -46,7 +47,18 @@ CREATE TABLE `article` (
 --
 ALTER TABLE `article`
   ADD PRIMARY KEY (`Article_id`),
-  ADD KEY `Nick` (`Nick`);
+  ADD KEY `Nick` (`Nick`),
+  ADD KEY `Tema_cs` (`Tema`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `article`
+--
+ALTER TABLE `article`
+  MODIFY `Article_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE HTML>
 <?php
     session_start();
-    $_SESSION['www']= 'index';
+    $_SESSION['www']= 'profil';
 ?>
 <html lang="cs">
 	<head>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
-    <script>
+<script>
 		var pagetop, menu, yPos;
 		function yScroll(){
 			pagetop = document.getElementById('pagetop');
@@ -17,7 +17,7 @@
 				topul.style.height = "0px";
 				topul.style.paddingBottom = "0px";
 			} else {
-				pagetop.style.height = "160px";
+				pagetop.style.height = "120px";
 				topul.style.height = "50px";
 				topul.style.paddingBottom = "1%";
 			}
@@ -26,13 +26,12 @@
 	</script>
 	</head>
 	<body>
-    <?php
+	<?php
 	include('topMenu.php');
-	?> 
+	?>  
     <div id="wrapper">
-  	
-    </div>
-    <?php
+</div>
+ <?php
 	include('bottom.php');
 	?> 
 	</body>

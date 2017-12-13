@@ -41,6 +41,19 @@ li a {
 	font-family: Calibri;
 }
 
+.styled-select {
+	padding-right: 8px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 10px;
+	padding-left: 8px;
+   height: 29px;
+   overflow: hidden;
+   width: auto;
+}
+
+
 .dropdown-content {
 	display: none;
 	position: absolute;
@@ -227,6 +240,22 @@ li a {
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
+.table-submit {
+	/* border: 1px solid #3079ed; */
+	border: 0px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0,0,0,0.1);
+	background-color: #EC1F31;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.table-submit:hover {
+	/* border: 1px solid #2f5bb7; */
+	border: 0px;
+	text-shadow: 0 1px rgba(0,0,0,0.3);
+	background-color: #EF6773;  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
 .login-submit:hover {
 	/* border: 1px solid #2f5bb7; */
 	border: 0px;
@@ -288,10 +317,10 @@ li a {
   	font-size: 18px;
 }
 table {
-	width: 300px;
+	width: auto;
 	border: 1px solid #AAA;
-	table-layout: fixed;
 	border-collapse: collapse;
+	table-layout:fixed;
 }
 table td, table th {
     border: 1px solid #DDD;
@@ -301,7 +330,7 @@ table td, table th {
     box-sizing: border-box;
 	height: 44px;
   font-size: 16px;
-  width: 100%;
+  white-space:nowrap;
   margin-bottom: 10px;
   -webkit-appearance: none;
   background: #fff;
@@ -320,7 +349,19 @@ table td, table th {
 }
 .Main-card {
 	padding: 40px;
-	width: 450px;
+	display: block;
+	background-color: #EAEAEA;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	text-align: center;
+}
+.Main-card-inline{
+	padding: 40px;
+	display: inline-block;
 	background-color: #EAEAEA;
 	margin-top: 20px;
 	margin-right: auto;
@@ -378,5 +419,27 @@ table td, table th {
 	top: 0px;
 	width:100%;
 	transition: height 0.3s linear 0s, padding 0.3s linear 0s;
+}
+#pagebottom{
+   padding: 10px;
+   position:auto;
+   bottom:0;
+   width:98%;
+   height:90px;   /* Height of the footer */
+   background-color: #EAEAEA;
+   overflow: hidden;
+}
+#bottomtext{
+	padding: 5px;
+	display: inline-block;
+    position:absolute;
+	text-align: left;
+}
+#bottomtext2{
+	left: 62%;
+	padding: 5px;
+	display: inline-block;
+	position: relative;
+	text-align: left;
 }
 #wrapper{ margin-top: 150px; }

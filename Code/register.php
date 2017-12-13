@@ -1,4 +1,8 @@
 ﻿<!DOCTYPE HTML>
+<?php
+    session_start();
+    $_SESSION['www']= 'register';
+?>
 <html lang="cs">
 	<head>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
@@ -31,8 +35,7 @@
 	$error = "";
 	
 	
-	$con=mysqli_connect('localhost','root','') or die(mysql_error());
-	mysqli_select_db($con,'polytech');
+	include('connect.php');
 	
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty($_POST["user"])) {
@@ -130,26 +133,9 @@
 			return $data;
 		}
 	?>
-	<div id="pagetop">
-	<ul class="topul" id="topul">
-    	<li><a href="Index.php" class="Title1">LOGOS</a></li>
-        <li><a href="Index.php" class="Title2">POLYTECHNIKOS</a></li>
-		<li style="float:right" ><a href="login.php" class="btn">login</a></li>
-		<li style="float:right"><a href="register.php" class="active_b btn ">register</a></li>
-	</ul>
-	<ul>
-	  <li><a href="Index.php" class="hav pic"><img border="0" alt="Home" src="images/home-blue.png" width="30" height="30"></a></li>
-		<li><a href="casopisy.php" class="hav">Čísla časopisu</a></li>
-		<li style="float:right" ><a href="about.php" class="hav">Informace</a></li>
-		<?php
-		   if (!isset($_SESSION['user'])) {
-			    if ($_SESSION['type'] == "redaktor") {
-			   echo '<li style="float:right" ><a href="revize.php" class="hav">Revize <u class="NotifNum">0</u></a></li>';
-			   }
-		   }
-		   ?>
-	</ul>
-</div>
+	<?php
+	include('topMenu.php');
+	?> 
     <div id="wrapper">
     <div class="login-card">
      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -162,5 +148,8 @@
  	 </form>
      </div>
 </div>
+ <?php
+	include('bottom.php');
+	?> 
 	</body>
 </html>
