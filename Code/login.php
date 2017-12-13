@@ -97,7 +97,7 @@
     	<input type="submit" name="login" class="login login-submit" value="login">
  	 </form>
      <div class="login-help">
-    	<a href="register.php">Register</a> • <a href="#">Forgot Password</a>
+    	<a href="register.php">Register</a> • <a href="forgot.php">Forgot Password</a>
  	 </div>
      </div>
  </div>
