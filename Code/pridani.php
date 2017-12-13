@@ -73,19 +73,29 @@
 				
 				$tema = $_POST["Tema"];
 				
-				$sql="INSERT INTO article (Titule,Tema,Comment,Name,Nick) VALUES('$title','$tema','$comment','$target_file','$userName')";
-				$result=mysqli_query($con,$sql);
 				
 				if (!file_exists($target_file)) {
-				 	if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-       					$secces .= '* soubor se podařilo nahrát ' .$rename .'<br>';
-    				} else {
-        				$error .= '* neznamý error <br>';
-   				 	}
-				}
+						if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+							$sql="INSERT INTO article (Titule,Tema,Comment,Name,Nick) VALUES('$title','$tema','$comment','$target_file','$userName')";
+							$result=mysqli_query($con,$sql);
+							$secces .= '* soubor se podařilo nahrát ' .$rename .'<br>';
+							} 
+						else {
+							    $target_dir = "uploads\\";
+								$target_file = $target_dir . $name . '.' . $fileType;
+								if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+										$sql="INSERT INTO article (Titule,Tema,Comment,Name,Nick) VALUES('$title','$tema','$comment','$target_file','$userName')";
+										$result=mysqli_query($con,$sql);
+										$secces .= '* soubor se podařilo nahrát ' .$rename .'<br>';
+								}
+								else {
+									$error .= '* soubor se nepodařilo nahrat počet erroru:'.$_FILES['file']['error'].'<br>';
+								}
+							}
+					}
 				else
 				{
-					$error .= '* neznamý error <br>';
+					$error .= '* soubor existuje <br>';
 				}
 			}
 		 

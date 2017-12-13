@@ -90,7 +90,7 @@
 	$count=mysqli_num_rows($result);
 	if (isset($_SESSION['user'])) {
 		  echo '<div class="Main-card">';
-			echo '<h2>Nepotvrzené přispjevky</h2>';
+			echo '<h2>Nepotvrzené přispěvky</h2>';
 			echo '<table align="center">';
 			echo '<tr>';
 			echo ' <th class="tbltop">Autor</th>';
@@ -122,7 +122,7 @@
 		echo '</div>';
 		$result=mysqli_query($con,$sql);
 		 echo '<div class="Main-card">';
-			echo '<h2>Spracované přispjevky</h2>';
+			echo '<h2>Spracované přispěvky</h2>';
 			echo '<table align="center">';
 			echo '<tr>';
 			echo ' <th class="tbltop">Autor</th>';
