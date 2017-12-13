@@ -25,34 +25,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `usertype`
 --
 
-CREATE TABLE `user` (
-  `Nick` varchar(32) NOT NULL,
-  `Pass` varchar(255) NOT NULL,
-  `Email` varchar(64) NOT NULL,
-  `Type` varchar(32) NOT NULL DEFAULT 'user'
+CREATE TABLE `usertype` (
+  `Type` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `usertype`
 --
 
-INSERT INTO `user` (`Nick`, `Pass`, `Email`, `Type`) VALUES
-('enverr', '$2y$10$/CbKjwHE25thHyZ.nFHFFO4rnbX84axhFyEkqSABcAhXgEMpEZmVe', 'qwe@qwe.com', 'user'),
-('PepeDuke', '$2y$10$Q3NubEOAyOB75rhtcd4AHeLX3rmqAzXyhKu8UywTf.BdQqF5k7VBq', 'mrazek03@student.vspj.cz', 'admin');
+INSERT INTO `usertype` (`Type`) VALUES
+('admin'),
+('redaktor'),
+('user');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `user`
+-- Indexes for table `usertype`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`Nick`),
-  ADD KEY `Type_cs` (`Type`);
+ALTER TABLE `usertype`
+  ADD PRIMARY KEY (`Type`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

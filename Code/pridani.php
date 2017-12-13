@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE HTML>
 <?php
     session_start();
+    $_SESSION['www']= 'pridani';
 ?>
 <html lang="cs">
 	<head>
@@ -30,9 +31,9 @@
 	$comment = "";
 	$error = "";
 	$secces = "";
+	$tema = "";
 	
-	$con=mysqli_connect('localhost','root','') or die(mysql_error());
-	mysqli_select_db($con,'polytech');
+	include('connect.php');
 	
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (isset($_FILES["file"]["name"])) {
@@ -70,8 +71,9 @@
 				$rename = test_input($_FILES["file"]["name"]);
 				$userName = $_SESSION['user'];
 				
+				$tema = $_POST["Tema"];
 				
-				$sql="INSERT INTO article (Titule,Comment,Name,Nick) VALUES('$title','$comment','$target_file','$userName')";
+				$sql="INSERT INTO article (Titule,Tema,Comment,Name,Nick) VALUES('$title','$tema','$comment','$target_file','$userName')";
 				$result=mysqli_query($con,$sql);
 				
 				if (!file_exists($target_file)) {
@@ -113,45 +115,32 @@
 		}
 	
     ?>
-	<div id="pagetop">
-	<ul class="topul" id="topul">
-    	<li><a href="Index.php" class="Title1">LOGOS</a></li>
-        <li><a href="Index.php" class="Title2">POLYTECHNIKOS</a></li>
-		<?php
-		  if (!isset($_SESSION['user'])) {
-			  echo '<li style="float:right" ><a href="login.php" class="btn">login</a></li>';
-			  echo '<li style="float:right"><a href="register.php" class="btn">register</a></li>';
-		  }
-		  else
-		  {
-			  echo '<li style="float:right" class="dropdown" ><button class="dropbtn">' .$_SESSION['user']. '</button><div class="dropdown-content"><a href="prispevky.php" class="dropmenu">Seznam píspěvků</a><a href="logout.php" class="dropmenu">Odhlasit</a></div></li>';
-			  echo '<li style="float:right"><a href="pridani.php" class="btn pic"><img border="0" alt="Home" src="images/article-red.png" width="20" height="20"></a></li>';
-		  }
-        	?>
-	</ul>
-	<ul>
-	  <li><a href="Index.php" class="hav pic"><img border="0" alt="Home" src="images/home-blue.png" width="30" height="30"></a></li>
-		<li><a href="casopisy.php" class="hav">Čísla časopisu</a></li>
-		<li style="float:right" ><a href="about.php" class="hav">Informace</a></li>
-		<?php
-		   if (!isset($_SESSION['user'])) {
-			    if ($_SESSION['type'] == "redaktor") {
-			   echo '<li style="float:right" ><a href="revize.php" class="hav">Revize <u class="NotifNum">0</u></a></li>';
-			   }
-		   }
-		   ?>
-	</ul>
-</div>
+	<?php 
+	include('topMenu.php');
+	?>  
     <div id="wrapper">
     <div class="login-card">
      <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
      	<span class="error"><?php echo $error;?></span><span class="secces"><?php echo $secces;?></span>
    	    <input type="text" name="title" placeholder="Titul" value="<?php echo $title;?>">
         <textarea name="comment" placeholder="Komentář" rows="5" cols="24" class="Commentstyle"><?php echo $comment;?></textarea>
+        <select name="Tema" class="styled-select">
+        <?php
+		$sql="SELECT * FROM tema";
+		$result=mysqli_query($con,$sql);
+		$count=mysqli_num_rows($result);
+		  while ($row = mysqli_fetch_assoc($result)){
+			  echo '<option value="'.$row["Tema"].'">'.$row["Tema"].'</option>';
+		  }
+		?> 
+ 		 </select>
         <input type="file" name="file" class="filestyle"  id="fileToUpload" >
     	<input type="submit" name="login" class="login login-submit" value="poslat k revizi">
  	 </form>
      </div>
  </div>
+ <?php
+	include('bottom.php');
+	?> 
 	</body>
 </html>
